@@ -1,0 +1,118 @@
+/* Correções específicas para mobile */
+@media (max-width: 600px) {
+
+    .custom-player {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+        width: 95%;
+        height: 10%; /* Menor */
+    }
+
+    .music-cover {
+        width: 50px;
+        height: 50px;
+        margin: 10px 0;
+    }
+
+    .full-control-line input[type="range"]#progress,
+    .full-control-line input[type="range"]#volume {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .envelope, .frente, .cartao {
+        transform: none !important; /* Remove escala distorcida */
+        width: 250px;
+        height: auto;
+    }
+
+    .envelope {
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }
+
+    .frente {
+        left: auto;
+        right: auto;
+    }
+
+    .cartao {
+        width: 230px;
+        height: 150px;
+        left: 10px;
+        top: 10px;
+    }
+
+    .sombra {
+        width: 280px;
+        left: auto;
+        right: auto;
+        margin: 0 auto;
+    }
+
+    .coracoes {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        right: 0;
+        z-index: 20; /* Garante que fica por cima */
+        pointer-events: none;
+    }
+
+    .namorados {
+        z-index: 10;
+        position: relative;
+    }
+    .envelope {
+    width: 250px;
+    height: 160px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.frente {
+    border-right: 125px solid #f4978e;
+    border-top: 80px solid transparent;
+    border-bottom: 90px solid transparent;
+    left: 100px;
+    top: 0;
+    transform: none !important;
+}
+
+.frente::before {
+    content: "";
+    position: absolute;
+    border-left: 250px solid #f8ad9d;
+    border-top: 170px solid transparent;
+    left: -125px;
+    top: -80px;
+}
+
+.cartao {
+    width: 230px;
+    height: 150px;
+    top: 5px;
+    left: 10px;
+    transform: none !important;
+}
+
+.cartao::before {
+    width: 200px;
+    height: 130px;
+    left: 15px;
+    top: 10px;
+}
+
+
+}
