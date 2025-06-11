@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cartão de Namorados</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="static/script.js"></script>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+<main>
+    <div class="custom-player">
+        <audio id="audio" src="../static/mp3/ANAVITÓRIA, Lenine e Orquestra Ouro Preto - Lisboa (Ao Vivo).mp3"></audio>
+        <img src="../static/img/espelho.jpg" alt="Capa da música" class="music-cover">
+        <div class="music-info">
+            <strong class="music-title">Lisboa (Ao Vivo)</strong>
+            <p class="music-author">ANAVITÓRIA, Lenine, Orquestra Ouro Preto</p>
+
+            <div class="full-control-line">
+                <span id="currentTime">0:00</span>
+                <input type="range" id="progress" value="0" step="1">
+                <span id="duration">0:00</span>
+
+                <button id="playPause" title="Play/Pause">⏯</button>
+                <button id="restart" title="Reiniciar">⟳</button>
+                <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="namorados">
+            <div class="envelope"></div>
+            <div class="frente"></div>
+            <div class="cartao">
+                <div class="texto">
+                    <p>💗 Maria Eduarda,<br><span style="font-size: medium;">Eu te amo há: </span><br>
+                    <span style="font-size: small;" id="contador"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="coracoes">
+        <div class="um"></div>
+        <div class="dois"></div>
+        <div class="tres"></div>
+        <div class="quatro"></div>
+        <div class="cinco"></div>
+    </div>
+    <div class="sombra"></div>
+</main>
+</body>
+</html>
+
