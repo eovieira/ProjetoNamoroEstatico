@@ -247,19 +247,6 @@ um:after, .dois:after, .tres:after, .quatro:after, .cinco:after {
     font-family: 'Brush Script MT';
     src: url('fonts/BrushScriptOpti-Regular.otf');
 }
-
-.custom-player {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    display: flex;
-    align-items: center;
-    background-color: #111;
-    color: white;
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    width: fit-content;
-}
-
 .music-cover {
     width: 60px;
     height: 60px;
