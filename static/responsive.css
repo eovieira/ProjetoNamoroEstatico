@@ -1,4 +1,64 @@
-/* Correções específicas para mobile */
 @media (max-width: 600px) {
-    
+    .custom-player {
+        width: 90vw;
+        height: auto;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .music-cover {
+        width: 48px;
+        height: 48px;
+        border-radius: 6px;
+    }
+
+    .music-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .music-title {
+        font-size: 1rem;
+    }
+
+    .music-author {
+        font-size: 0.8rem;
+    }
+
+    .full-control-line {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px;
+    }
+
+    #currentTime,
+    #duration {
+        font-size: 0.75rem;
+    }
+
+    input[type="range"]#progress {
+        flex: 1;
+        min-width: 50%;
+        max-width: 70%;
+        accent-color: #f4a3c5;
+    }
+
+    input[type="range"]#volume {
+        width: 15vw; /* bem menor */
+        accent-color: #f4a3c5;
+    }
+
+    button {
+        font-size: 1rem;
+        background: none;
+        border: none;
+        color: #f4a3c5;
+        cursor: pointer;
+    }
 }

@@ -1,14 +1,12 @@
-$(document).ready(function() {
-    $('.container').mouseenter(function(){
-        $('.cartao').stop().animate({
-            top: '-90px'
-        }, 'slow');
-    }).mouseleave(function(){
-        $('.cartao').stop().animate({
-            top: 0
-        }, 'slow');
+$(document).ready(function () {
+    // --- Animação do cartão ---
+    $('.container').mouseenter(function () {
+        $('.cartao').stop().animate({ top: '-90px' }, 'slow');
+    }).mouseleave(function () {
+        $('.cartao').stop().animate({ top: 0 }, 'slow');
     });
 
+    // --- Contador de tempo juntos ---
     const inicioAmor = new Date(2023, 4, 23, 0, 0, 0);
     function atualizarContador() {
         const agora = new Date();
@@ -29,67 +27,51 @@ $(document).ready(function() {
         }
         if (meses < 0) { meses += 12; anos--; }
 
-        document.getElementById('contador').textContent =
-            `${anos} anos, ${meses} meses, ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+        $('#contador').html(
+            `${anos} anos, ${meses} meses, ${dias} dias, ${horas} horas,<br>${minutos} minutos e ${segundos} segundos`
+        );
     }
     setInterval(atualizarContador, 1000);
     atualizarContador();
 
-    // PLAYER
+    // --- Player de música ---
     const audio = document.getElementById('audio');
-    document.addEventListener('click', () => {
-        if (audio.paused) {
-            audio.play().catch((e) => {
-                console.log('Autoplay bloqueado:', e);
-            });
-        }
-    }, { once: true }); 
-    const playPause = document.getElementById('playPause');
-    const restart = document.getElementById('restart');
-    const progress = document.getElementById('progress');
-    const volume = document.getElementById('volume');
-    const currentTimeDisplay = document.getElementById('currentTime');
-    const durationDisplay = document.getElementById('duration');
+    const playPause = $('#playPause');
+    const restart = $('#restart');
+    const progress = $('#progress');
+    const volume = $('#volume');
+    const currentTimeDisplay = $('#currentTime');
+    const durationDisplay = $('#duration');
 
-    // Toca a música automaticamente (garantido para desktop)
     audio.volume = 1;
-    audio.play();
+    audio.play().catch(() => {});
 
-    // Atualiza duração assim que possível
     audio.addEventListener('loadedmetadata', () => {
-        progress.max = audio.duration;
-        durationDisplay.textContent = formatTime(audio.duration);
+        progress.attr('max', audio.duration);
+        durationDisplay.text(formatTime(audio.duration));
     });
 
-    // Atualiza tempo da música
     audio.addEventListener('timeupdate', () => {
-        progress.value = audio.currentTime;
-        currentTimeDisplay.textContent = formatTime(audio.currentTime);
+        progress.val(audio.currentTime);
+        currentTimeDisplay.text(formatTime(audio.currentTime));
     });
 
-    // Slider para mudar tempo
-    progress.addEventListener('input', () => {
-        audio.currentTime = progress.value;
+    progress.on('input', () => {
+        audio.currentTime = progress.val();
     });
 
-    // Play/Pause toggle
-    playPause.addEventListener('click', () => {
-        if (audio.paused) {
-            audio.play();
-        } else {
-            audio.pause();
-        }
+    playPause.on('click', () => {
+        if (audio.paused) audio.play();
+        else audio.pause();
     });
 
-    // Restart
-    restart.addEventListener('click', () => {
+    restart.on('click', () => {
         audio.currentTime = 0;
         audio.play();
     });
 
-    // Volume
-    volume.addEventListener('input', () => {
-        audio.volume = volume.value;
+    volume.on('input', () => {
+        audio.volume = volume.val();
     });
 
     function formatTime(time) {
@@ -98,4 +80,47 @@ $(document).ready(function() {
         return `${minutes}:${seconds}`;
     }
 
+    // --- Carrossel de imagens ---
+    const track = $('.carousel-track');
+    const images = $('.carousel-img');
+    const total = images.length;
+    let index = 0;
+
+    function updateCarousel() {
+        const imageWidth = 300; // largura da imagem
+        const offset = -index * imageWidth;
+        track.css('transform', `translateX(${offset}px)`);
+    }
+
+    $('#next').on('click', () => {
+        index = (index + 1) % total;
+        updateCarousel();
+    });
+
+    $('#prev').on('click', () => {
+        index = (index - 1 + total) % total;
+        updateCarousel();
+    });
+
+    updateCarousel();
+
+    // --- Modal de imagem ampliada ---
+    const modal = $('#imageModal');
+    const modalImg = $('#modalImage');
+    const closeBtn = $('.close');
+
+    images.on('click', function () {
+        modal.show();
+        modalImg.attr('src', $(this).attr('src'));
+    });
+
+    closeBtn.on('click', () => {
+        modal.hide();
+    });
+
+    $(window).on('click', function (e) {
+        if ($(e.target).is(modal)) {
+            modal.hide();
+        }
+    });
 });

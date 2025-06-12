@@ -30,18 +30,21 @@
         </div>
 
     </div>
+
     <div class="container">
         <div class="namorados">
             <div class="envelope"></div>
             <div class="frente"></div>
             <div class="cartao">
-                <div class="texto">
-                    <p>💗 Maria Eduarda,<br><span style="font-size: medium;">Eu te amo há: </span><br>
-                    <span style="font-size: small;" id="contador"></span></p>
+                <div class="texto" style="margin:0; padding:0;">
+                    <p style="font-size: 1em;">💗 Maria Eduarda,<br><span style="font-size: 0.55em;">Eu te amo há: </span><br>
+                    <span style="font-size: 0.55em;" id="contador"></span></p>
                 </div>
             </div>
+            <div class="sombra"></div>
         </div>
     </div>
+    
     <div class="coracoes">
         <div class="um"></div>
         <div class="dois"></div>
@@ -49,7 +52,83 @@
         <div class="quatro"></div>
         <div class="cinco"></div>
     </div>
-    <div class="sombra"></div>
+    <div class="carousel-wrapper">
+        <div class="carousel-container">
+            <button class="carousel-btn" id="prev">⟨</button>
+            <div class="carousel-viewport">
+                <div class="carousel-track">
+                    <div class="carousel-img-wrapper">
+                        <img src="/static/img/adega.jpg" class="carousel-img" />
+                        <div class="image-overlay">Aperte aqui</div>
+                    </div>
+                    <div class="carousel-img-wrapper">
+                        <img src="/static/img/anonovo.jpg" class="carousel-img" />
+                        <div class="image-overlay">Aperte aqui</div>
+                    </div>
+                    <div class="carousel-img-wrapper">
+                        <img src="/static/img/beijo.jpg" class="carousel-img" />
+                        <div class="image-overlay">Aperte aqui</div>
+                    </div>
+                    <div class="carousel-img-wrapper">
+                        <img src="/static/img/beijoformatura.jpg" class="carousel-img" />
+                        <div class="image-overlay">Aperte aqui</div>
+                    </div>
+                    <div class="carousel-img-wrapper">
+                        <img src="/static/img/black.jpg" class="carousel-img" />
+                        <div class="image-overlay">Aperte aqui</div>
+                    </div>
+                    <div class="carousel-img-wrapper">
+                        <img src="/static/img/branco.jpg" class="carousel-img" />
+                        <div class="image-overlay">Aperte aqui</div>
+                    </div>
+                    <div class="carousel-img-wrapper">
+                        <img src="/static/img/caradihomi.jpg" class="carousel-img" />
+                        <div class="image-overlay">Aperte aqui</div>
+                    </div>
+                    <div class="carousel-img-wrapper">
+                        <img src="/static/img/espelho.jpg" class="carousel-img" />
+                        <div class="image-overlay">Aperte aqui</div>
+                    </div>
+                    <div class="carousel-img-wrapper">
+                        <img src="/static/img/lindo.jpg" class="carousel-img" />
+                        <div class="image-overlay">Aperte aqui</div>
+                    </div>
+                    <div class="carousel-img-wrapper">
+                        <img src="/static/img/nike.jpg" class="carousel-img" />
+                        <div class="image-overlay">Aperte aqui</div>
+                    </div>
+                    <div class="carousel-img-wrapper">
+                        <img src="/static/img/parqueaqua.jpg" class="carousel-img" />
+                        <div class="image-overlay">Aperte aqui</div>
+                    </div>
+                    <div class="carousel-img-wrapper">
+                        <img src="/static/img/preto.jpg" class="carousel-img" />
+                        <div class="image-overlay">Aperte aqui</div>
+                    </div>
+                    <div class="carousel-img-wrapper">
+                        <img src="/static/img/santos.jpg" class="carousel-img" />
+                        <div class="image-overlay">Aperte aqui</div>
+                    </div>
+                    <div class="carousel-img-wrapper">
+                        <img src="/static/img/vermei.jpg" class="carousel-img" />
+                        <div class="image-overlay">Aperte aqui</div>
+                    </div>
+                    <div class="carousel-img-wrapper">
+                        <img src="/static/img/zebonitinho.jpg" class="carousel-img" />
+                        <div class="image-overlay">Aperte aqui</div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn" id="next">⟩</button>
+        </div>
+
+    </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
 </main>
 </body>
 </html>
