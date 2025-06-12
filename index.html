@@ -5,15 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        div{
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+        body {
+            background-color: #f4a3c5;
+            font-family: Arial, sans-serif;
+        }
+        main{
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
+        a{
+            width: 20vw;
+            height: 20vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            background-color: black;
+            border-radius: 50px;
+            box-shadow:
+            0 0 0 5px black,     /* primeira borda preta */
+            0 0 0 10px #f4a3c5,  /* segunda borda rosa */
+            0 0 0 15px black;    /* terceira borda preta */
+        }
+        a{
+            color: #f4a3c5;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
-    <div><a href="pravoce.html">Clique aqui!</a></div>
+    <main>
+        <div><a href="pravoce.html">Clique aqui!</a></div>
+    </main>
 </body>
 </html>
