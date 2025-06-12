@@ -31,13 +31,20 @@
             background-color: black;
             border-radius: 50px;
             box-shadow:
-            0 0 0 5px black,     /* primeira borda preta */
-            0 0 0 10px #f4a3c5,  /* segunda borda rosa */
-            0 0 0 15px black;    /* terceira borda preta */
+            0 0 0 5px black,
+            0 0 0 10px #f4a3c5,
+            0 0 0 15px black;
         }
         a{
             color: #f4a3c5;
             text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            a {
+                width: 40vw;
+                height: 10vh;
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
